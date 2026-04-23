@@ -1,0 +1,81 @@
+{
+  "os": "Linux-5.15.0-25-generic-x86_64-with-glibc2.35",
+  "python": "CPython 3.10.18",
+  "startedAt": "2025-06-13T13:22:07.123142Z",
+  "args": [
+    "--per_device_train_batch_size",
+    "16",
+    "--gradient_accumulation_steps",
+    "8",
+    "--num_generations",
+    "16",
+    "--max_completion_length",
+    "256",
+    "--learning_rate",
+    "5e-7",
+    "--num_train_epochs",
+    "2",
+    "--save_steps",
+    "50",
+    "--logging_steps",
+    "5"
+  ],
+  "program": "/home/wdh/lqz/Reason4Rec/multi_gpu_grpo_reasoner.py",
+  "codePath": "multi_gpu_grpo_reasoner.py",
+  "git": {
+    "remote": "https://github.com/Peter-Fy/Reason4Rec.git",
+    "commit": "d7738c8d2913164a299e6e56818e33edc226f642"
+  },
+  "root": "/home/wdh/lqz/Reason4Rec",
+  "host": "a100",
+  "executable": "/home/wdh/miniconda3/envs/grpo310/bin/python3.10",
+  "codePathLocal": "multi_gpu_grpo_reasoner.py",
+  "cpu_count": 72,
+  "cpu_count_logical": 144,
+  "gpu": "NVIDIA A800 80GB PCIe",
+  "gpu_count": 4,
+  "disk": {
+    "/": {
+      "total": "871837028352",
+      "used": "631284617216"
+    }
+  },
+  "memory": {
+    "total": "540613443584"
+  },
+  "cpu": {
+    "count": 72,
+    "countLogical": 144
+  },
+  "gpu_nvidia": [
+    {
+      "name": "NVIDIA A800 80GB PCIe",
+      "memoryTotal": "85899345920",
+      "cudaCores": 6912,
+      "architecture": "Ampere",
+      "uuid": "GPU-26670bdd-1970-4729-9e05-a83975a383a1"
+    },
+    {
+      "name": "NVIDIA A800 80GB PCIe",
+      "memoryTotal": "85899345920",
+      "cudaCores": 6912,
+      "architecture": "Ampere",
+      "uuid": "GPU-ff7317fa-fb42-339d-bff0-1c0d07bbb1ef"
+    },
+    {
+      "name": "NVIDIA A800 80GB PCIe",
+      "memoryTotal": "85899345920",
+      "cudaCores": 6912,
+      "architecture": "Ampere",
+      "uuid": "GPU-5314723e-7a84-0600-e0ae-0d3f97c187f7"
+    },
+    {
+      "name": "NVIDIA A800 80GB PCIe",
+      "memoryTotal": "85899345920",
+      "cudaCores": 6912,
+      "architecture": "Ampere",
+      "uuid": "GPU-f87651a1-7bda-f5b5-98bd-4edc90c02cdb"
+    }
+  ],
+  "cudaVersion": "12.4"
+}

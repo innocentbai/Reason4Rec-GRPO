@@ -1,0 +1,66 @@
+INFO 06-13 14:11:48 [__init__.py:244] Automatically detected platform cuda.
+INFO 06-13 14:12:45 [api_server.py:1287] vLLM API server version 0.9.1
+INFO 06-13 14:12:46 [cli_args.py:309] non-default args: {'host': '0.0.0.0', 'lora_modules': [LoRAModulePath(name='reasoner', path='./checkpoints/Music_data/Reasoner/final_checkpoint', base_model_name=None)], 'model': '/data/wdh/unsloth/llama-3-8b-Instruct-bnb-4bit', 'trust_remote_code': True, 'max_model_len': 4096, 'gpu_memory_utilization': 0.8, 'enable_lora': True}
+Traceback (most recent call last):
+  File "/home/wdh/miniconda3/envs/grpo310/lib/python3.10/runpy.py", line 196, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/home/wdh/miniconda3/envs/grpo310/lib/python3.10/runpy.py", line 86, in _run_code
+    exec(code, run_globals)
+  File "/home/wdh/miniconda3/envs/grpo310/lib/python3.10/site-packages/vllm/entrypoints/openai/api_server.py", line 1387, in <module>
+    uvloop.run(run_server(args))
+  File "/home/wdh/miniconda3/envs/grpo310/lib/python3.10/site-packages/uvloop/__init__.py", line 82, in run
+    return loop.run_until_complete(wrapper())
+  File "uvloop/loop.pyx", line 1512, in uvloop.loop.Loop.run_until_complete
+  File "uvloop/loop.pyx", line 1505, in uvloop.loop.Loop.run_until_complete
+  File "uvloop/loop.pyx", line 1379, in uvloop.loop.Loop.run_forever
+  File "uvloop/loop.pyx", line 557, in uvloop.loop.Loop._run
+  File "uvloop/loop.pyx", line 476, in uvloop.loop.Loop._on_idle
+  File "uvloop/cbhandles.pyx", line 83, in uvloop.loop.Handle._run
+  File "uvloop/cbhandles.pyx", line 61, in uvloop.loop.Handle._run
+  File "/home/wdh/miniconda3/envs/grpo310/lib/python3.10/site-packages/uvloop/__init__.py", line 61, in wrapper
+    return await main
+  File "/home/wdh/miniconda3/envs/grpo310/lib/python3.10/site-packages/vllm/entrypoints/openai/api_server.py", line 1323, in run_server
+    await run_server_worker(listen_address, sock, args, **uvicorn_kwargs)
+  File "/home/wdh/miniconda3/envs/grpo310/lib/python3.10/site-packages/vllm/entrypoints/openai/api_server.py", line 1343, in run_server_worker
+    async with build_async_engine_client(args, client_config) as engine_client:
+  File "/home/wdh/miniconda3/envs/grpo310/lib/python3.10/contextlib.py", line 199, in __aenter__
+    return await anext(self.gen)
+  File "/home/wdh/miniconda3/envs/grpo310/lib/python3.10/site-packages/vllm/entrypoints/openai/api_server.py", line 155, in build_async_engine_client
+    async with build_async_engine_client_from_engine_args(
+  File "/home/wdh/miniconda3/envs/grpo310/lib/python3.10/contextlib.py", line 199, in __aenter__
+    return await anext(self.gen)
+  File "/home/wdh/miniconda3/envs/grpo310/lib/python3.10/site-packages/vllm/entrypoints/openai/api_server.py", line 177, in build_async_engine_client_from_engine_args
+    vllm_config = engine_args.create_engine_config(usage_context=usage_context)
+  File "/home/wdh/miniconda3/envs/grpo310/lib/python3.10/site-packages/vllm/engine/arg_utils.py", line 1018, in create_engine_config
+    model_config = self.create_model_config()
+  File "/home/wdh/miniconda3/envs/grpo310/lib/python3.10/site-packages/vllm/engine/arg_utils.py", line 910, in create_model_config
+    return ModelConfig(
+  File "/home/wdh/miniconda3/envs/grpo310/lib/python3.10/site-packages/pydantic/_internal/_dataclasses.py", line 120, in __init__
+    s.__pydantic_validator__.validate_python(ArgsKwargs(args, kwargs), self_instance=s)
+  File "/home/wdh/miniconda3/envs/grpo310/lib/python3.10/site-packages/vllm/config.py", line 548, in __post_init__
+    supported_tasks, task = self._resolve_task(self.task)
+  File "/home/wdh/miniconda3/envs/grpo310/lib/python3.10/site-packages/vllm/config.py", line 798, in _resolve_task
+    "transcription": registry.is_transcription_model(architectures),
+  File "/home/wdh/miniconda3/envs/grpo310/lib/python3.10/site-packages/vllm/model_executor/models/registry.py", line 558, in is_transcription_model
+    model_cls, _ = self.inspect_model_cls(architectures)
+  File "/home/wdh/miniconda3/envs/grpo310/lib/python3.10/site-packages/vllm/model_executor/models/registry.py", line 472, in inspect_model_cls
+    model_info = self._try_inspect_model_cls(arch)
+  File "/home/wdh/miniconda3/envs/grpo310/lib/python3.10/site-packages/vllm/model_executor/models/registry.py", line 445, in _try_inspect_model_cls
+    return _try_inspect_model_cls(model_arch, self.models[model_arch])
+  File "/home/wdh/miniconda3/envs/grpo310/lib/python3.10/site-packages/vllm/model_executor/models/registry.py", line 365, in _try_inspect_model_cls
+    return model.inspect_model_cls()
+  File "/home/wdh/miniconda3/envs/grpo310/lib/python3.10/site-packages/vllm/model_executor/models/registry.py", line 336, in inspect_model_cls
+    return _run_in_subprocess(
+  File "/home/wdh/miniconda3/envs/grpo310/lib/python3.10/site-packages/vllm/model_executor/models/registry.py", line 592, in _run_in_subprocess
+    returned = subprocess.run(_SUBPROCESS_COMMAND,
+  File "/home/wdh/miniconda3/envs/grpo310/lib/python3.10/subprocess.py", line 505, in run
+    stdout, stderr = process.communicate(input, timeout=timeout)
+  File "/home/wdh/miniconda3/envs/grpo310/lib/python3.10/subprocess.py", line 1154, in communicate
+    stdout, stderr = self._communicate(input, endtime, timeout)
+  File "/home/wdh/miniconda3/envs/grpo310/lib/python3.10/subprocess.py", line 2021, in _communicate
+    ready = selector.select(timeout)
+  File "/home/wdh/miniconda3/envs/grpo310/lib/python3.10/selectors.py", line 416, in select
+    fd_event_list = self._selector.poll(timeout)
+  File "/home/wdh/miniconda3/envs/grpo310/lib/python3.10/site-packages/vllm/entrypoints/openai/api_server.py", line 1307, in signal_handler
+    raise KeyboardInterrupt("terminated")
+KeyboardInterrupt: terminated
